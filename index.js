@@ -20,3 +20,28 @@ document.getElementById('button').addEventListener('click', () => {
         pointsDisplay.textContent = `Stats: ${alphabet[Math.floor(letterIndex/(26**Math.floor(letterIndex.log(26))))]}^${alphabet[Math.floor(letterIndex.log(26))]}`;
     }
 });
+for (let i = 1; i <= 10; i++) {
+    document.getElementById('upgradeButton'+i).addEventListener('click', () => {
+        let cost = 26**i;
+        if (letterIndex >= cost) {
+            upgrades++;
+            upgradesDisplay.textContent = `Upgrades: ${upgrades}`;
+            lettersPerSecond += i + 1;
+            letterIndex -= cost;
+        } else {
+            alert('Not enough stats to buy upgrade!');
+        }
+    });
+}
+
+setInterval(() => {
+    letterIndex += lettersPerSecond;
+    let temp = letterIndex;
+    let tempStats = '';
+    for (let i = 0; i < 10; i++) {
+        tempStats = alphabet[temp % 26] + tempStats;
+        temp = Math.floor(temp / 26);
+    }
+    currentStats = tempStats;
+    pointsDisplay.textContent = `Stats: ${currentStats}`;
+}, 1000);
