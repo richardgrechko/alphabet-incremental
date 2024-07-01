@@ -1,6 +1,10 @@
 let letterIndex = 0;
 let alphabet = 'abcdefghijklmnopqrstuvwxyz';
 let pointsDisplay = document.getElementById('points');
+let upgradesDisplay = document.getElementById('upgrades');
+let currentStats = 'a';
+let upgrades = 0;
+let lettersPerSecond = 0;
 
 setInterval(() => {
         if (letterIndex < 25) {
