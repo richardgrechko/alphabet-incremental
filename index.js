@@ -44,5 +44,5 @@ setInterval(() => {
         temp = Math.floor(temp / 26);
     }
     currentStats = tempStats;
-    pointsDisplay.textContent = `Stats: ${currentStats}`;
+    points = `Stats: ${currentStats}`;
 }, 15);
