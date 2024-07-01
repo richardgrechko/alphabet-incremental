@@ -6,7 +6,7 @@ document.getElementById('button').addEventListener('click', () => {
         letterIndex++;
     if (letterIndex < (26**5)-1) {
         letterIndex++;
-        pointsDisplay.textContent = `Stats: ${alphabet[Math.floor(letterIndex/26)]}${alphabet[letterIndex]}`;
+        pointsDisplay.textContent = `Stats: ${alphabet[Math.floor(letterIndex/26)]}^${alphabet[Math.floor(letterIndex.log(26))]}`;
     }
     if (letterIndex < (26**4)-1) {
         letterIndex++;
