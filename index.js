@@ -19,6 +19,17 @@ setInterval(() => {
         pointsDisplay.textContent = `Stats: ${alphabet[Math.floor(letterIndex/(26**Math.floor(letterIndex.log(26))))]}^${alphabet[Math.floor(letterIndex.log(26))]}`;
     }
 }, 15);
+function upgrade(i) {
+        let cost = 26**i;
+        if (letterIndex >= cost) {
+            upgrades++;
+            upgradesDisplay.textContent = `Upgrades: ${upgrades}`;
+            lettersPerSecond += 10 ** (i - 1);
+            letterIndex -= cost;
+        } else {
+            alert('Not enough stats to buy upgrade!');
+        }
+}
 setInterval(() => {
     letterIndex += lettersPerSecond / 60;
     let temp = letterIndex;
