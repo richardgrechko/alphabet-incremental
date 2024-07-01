@@ -21,7 +21,7 @@ setInterval(() => {
         points = `Stats: ${alphabet[Math.floor(letterIndex/(26**3))-1]}${alphabet[Math.floor(letterIndex/(26**2)) % 26]}${alphabet[Math.floor(letterIndex/26) % 26]}${alphabet[Math.floor(letterIndex) % 26]}`;
     }
     if (letterIndex < (26**5)-1) {
-        points = `Stats: ${alphabet[Math.floor(letterIndex/(26**Math.floor(D(letterIndex).log(26))))]}^${alphabet[Math.floor(D(letterIndex).log(26))]}`;
+        points = `Stats: ${alphabet[Math.floor(letterIndex/(26**Math.floor(new Decimal(letterIndex).log(26))))]}^${alphabet[Math.floor(new Decimal(letterIndex).log(26))]}`;
     }
 }, 15);
 function upgrade(i) {
