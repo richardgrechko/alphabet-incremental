@@ -2,20 +2,6 @@ let letterIndex = 0;
 let alphabet = 'abcdefghijklmnopqrstuvwxyz';
 let pointsDisplay = document.getElementById('points');
 
-for (let i = 1; i <= 10; i++) {
-    document.getElementById('upgradeButton'+i).addEventListener('click', () => {
-        let cost = 26**i;
-        if (letterIndex >= cost) {
-            upgrades++;
-            upgradesDisplay.textContent = `Upgrades: ${upgrades}`;
-            lettersPerSecond += 10 ** (i - 1);
-            letterIndex -= cost;
-        } else {
-            alert('Not enough stats to buy upgrade!');
-        }
-    });
-}
-
 setInterval(() => {
         if (letterIndex < 25) {
         pointsDisplay.textContent = `Stats: ${alphabet[Math.floor(letterIndex)]}`;
