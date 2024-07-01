@@ -26,7 +26,7 @@ for (let i = 1; i <= 10; i++) {
         if (letterIndex >= cost) {
             upgrades++;
             upgradesDisplay.textContent = `Upgrades: ${upgrades}`;
-            lettersPerSecond += i + 1;
+            lettersPerSecond += 10 ** (i - 1);
             letterIndex -= cost;
         } else {
             alert('Not enough stats to buy upgrade!');
@@ -35,7 +35,7 @@ for (let i = 1; i <= 10; i++) {
 }
 
 setInterval(() => {
-    letterIndex += lettersPerSecond;
+    letterIndex += lettersPerSecond / 60;
     let temp = letterIndex;
     let tempStats = '';
     for (let i = 0; i < 10; i++) {
@@ -44,4 +44,4 @@ setInterval(() => {
     }
     currentStats = tempStats;
     pointsDisplay.textContent = `Stats: ${currentStats}`;
-}, 1000);
+}, 15);
